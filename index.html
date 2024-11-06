@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples de Idade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+        .container {
+            text-align: center;
+            border: 2px solid #ddd;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input {
+            width: 18vw;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="container">
+
+
+    <h1>Calculadora de Idade</h1>
+    <input type="number" id="anoNascimento" placeholder="Digite seu ano de nascimento">
+    <br>
+
+
+    <button onclick="calcularIdade()">Calcular Idade</button>
+    <p id="resultado"></p>
+</div>
+
+
+<script>
+    function calcularIdade() {
+      let anoNascimentoUsuario = document.getElementById("anoNascimento").value;
+      const anoAtual = 2024;
+      let idade = anoAtual - anoNascimentoUsuario;
+
+      if (anoNascimentoUsuario < 1900) {
+        document.getElementById("resultado").innerHTML = ("Insira uma data válida.")
+      } else {
+        document.getElementById("resultado").innerHTML = ("Quem nasceu em " + anoNascimentoUsuario + " tem " + idade + " anos.")
+      }
+
+      document.getElementById("anoNascimento").value = "";
+    }
+</script>
+
+
+</body>
+</html>
